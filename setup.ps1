@@ -194,15 +194,15 @@ if (-not (Get-Command "ollama" -ErrorAction SilentlyContinue)) {
 if (Get-Command "ollama" -ErrorAction SilentlyContinue) {
     try {
         $OllamaList = ollama list 2>&1
-        if ($OllamaList -notmatch "gemma3:4b") {
-            Write-Info "Pulling gemma3:4b model... (this may take a while)"
-            ollama pull gemma3:4b
-            Write-Success "gemma3:4b model ready"
+        if ($OllamaList -notmatch "gemma3:12b") {
+            Write-Info "Pulling gemma3:12b model... (this may take a while)"
+            ollama pull gemma3:12b
+            Write-Success "gemma3:12b model ready"
         } else {
-            Write-Info "gemma3:4b model already present—skipping"
+            Write-Info "gemma3:12b model already present—skipping"
         }
     } catch {
-        Write-Info "Warning: Failed to pull gemma3:4b model. You may need to install it manually later."
+        Write-Info "Warning: Failed to pull gemma3:12b model. You may need to install it manually later."
     }
 }
 
